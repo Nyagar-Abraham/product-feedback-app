@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	.h1 {
+		@apply text-[25px] font-semibold leading-[35px] tracking-tight;
+	}
+	.h2 {
+		@apply text-[20px] leading-[29px] tracking-[-0.25] font-semibold;
+	}
+	.h3 {
+		@apply text-[18px] leading-[26px] tracking-[-0.25] font-semibold;
+	}
+	.h4 {
+		@apply text-[14px] leading-[20px] tracking-[-0.25] font-semibold;
+	}
+	.p1 {
+		@apply text-darkBlue  text-[16px] leading-[23px];
+	}
+	.p2 {
+		@apply text-darkGray  text-[15px] leading-[22px];
+	}
+	.p3 {
+		@apply text-darkBlue  text-[13px] leading-[19px];
+	}
+
+	.flex-center {
+		@apply flex justify-center items-center;
+	}
+	.flex-between {
+		@apply flex justify-between items-center;
+	}
+}
