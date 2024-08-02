@@ -6,6 +6,9 @@ import Sort from './Sort';
 import BackBtn from './BackBtn';
 import Modal from './Dialog';
 import { FeedBackForm } from './FeedbackForm';
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import Link from 'next/link';
+import { LogIn } from 'lucide-react';
 const NavBar = ({ place }: { place: string }) => {
 	return (
 		<div className=" bg-darkBlue msm:rounded-lg p-3 flex-between ">
@@ -33,19 +36,29 @@ const NavBar = ({ place }: { place: string }) => {
 					</div>
 				)}
 			</div>
-			<Modal
-				trigger={
-					<Button
-						size="lg"
-						variant="default"
-						className="rounded-lg text-veryLightGray"
-					>
-						+ Add Feedback
-					</Button>
-				}
-			>
-				<FeedBackForm />
-			</Modal>
+			<div className="flex-center gap-2">
+				<Modal
+					trigger={
+						<Button
+							size="lg"
+							variant="default"
+							className="rounded-lg text-veryLightGray"
+						>
+							+ Add Feedback
+						</Button>
+					}
+				>
+					<FeedBackForm />
+				</Modal>
+				<SignedIn>
+					<UserButton />
+				</SignedIn>
+				<SignedOut>
+					<Link href="/sign-in">
+						<LogIn className="text-primary h-[24px] w-24px" />
+					</Link>
+				</SignedOut>
+			</div>
 		</div>
 	);
 };

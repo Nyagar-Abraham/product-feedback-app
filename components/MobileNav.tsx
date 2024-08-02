@@ -11,7 +11,7 @@ import menu from '@/public/assets/shared/mobile/icon-hamburger.svg';
 import close from '@/public/assets/shared/mobile/icon-close.svg';
 import Filter from './Filter';
 import RoadMap from './RoadMap';
-import { SignedIn } from '@clerk/nextjs';
+import { SignedIn, SignedOut } from '@clerk/nextjs';
 import { LogInIcon } from 'lucide-react';
 import { Button } from './ui/button';
 import Link from 'next/link';
@@ -29,7 +29,7 @@ const MobileNav = () => {
 				</div>
 
 				<div className="mt-6 w-[220px]">
-					<SignedIn>
+					<SignedOut>
 						<Link
 							href="sign-in"
 							className="flex gap-3 px-3 py-1 text-darkGray bg-lightGray hover:bg-veryLightGray rounded-lg items-center"
@@ -37,7 +37,7 @@ const MobileNav = () => {
 							<LogInIcon />
 							<span>Log in</span>
 						</Link>
-					</SignedIn>
+					</SignedOut>
 				</div>
 			</SheetContent>
 		</Sheet>

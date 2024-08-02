@@ -22,6 +22,8 @@ const Header = () => {
 			}
 		}
 
+		callback();
+
 		window.addEventListener('resize', callback);
 
 		return () => {
